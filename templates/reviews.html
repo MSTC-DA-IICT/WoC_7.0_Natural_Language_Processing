@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Reviews</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        .critical {
+            color: green !important;
+            
+        }
+
+        .not-critical {
+            color: red !important;
+        }
+
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Amazon Reviews</h1>
+    <div class="review-cards">
+        {% for review in reviews %}
+            <div class="card">
+                {% if review.critical %}
+                    <!-- <h3 class="critical">{{ review.title }}</h3> -->
+                    <p class="critical">{{ review.text }}</p>
+                {% else %}
+                    <!-- <h3 class="not-critical">{{ review.title }}</h3> -->
+                    <p class="critical">{{ review.text }}</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
